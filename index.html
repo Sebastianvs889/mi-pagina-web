@@ -1,55 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mi Sitio Web</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Tienda Online</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      color: #222;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .producto {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .producto img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 8px;
+    }
+
+    .producto h3 {
+      margin: 10px 0;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 500px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    @media (min-width: 768px) {
+      .producto {
+        display: inline-block;
+        width: 45%;
+        margin: 2%;
+        vertical-align: top;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="logo">MiWeb</div>
-      <ul class="nav-links">
+    <h1>Mi Tienda Online</h1>
+    <nav>
+      <ul>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#acerca">Acerca de</a></li>
-        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="inicio" class="seccion">
-    <h1>Bienvenido a Mi Sitio Web</h1>
-    <p>Descubre nuestros servicios y quiénes somos.</p>
+  <section id="inicio">
+    <h2>Bienvenido a Mi Tienda Online</h2>
+    <p>Ropa cómoda y sustentable para todos los días.</p>
   </section>
 
-  <section id="acerca" class="seccion">
-    <h2>Acerca de</h2>
-    <p>Somos una empresa dedicada a crear soluciones digitales innovadoras. Nuestra misión es ayudarte a crecer en línea.</p>
+  <section id="productos">
+    <h2>Productos</h2>
+    <div class="producto">
+      <img src="camiseta.jpg" alt="Camiseta ecológica">
+      <h3>Camiseta ecológica</h3>
+      <p>$350 MXN</p>
+      <p>100% algodón orgánico, suave y transpirable.</p>
+      <button>Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="mochila.jpg" alt="Mochila reciclada">
+      <h3>Mochila reciclada</h3>
+      <p>$850 MXN</p>
+      <p>Materiales reciclados, resistente y moderna.</p>
+      <button>Agregar al carrito</button>
+    </div>
   </section>
 
-  <section id="servicios" class="seccion">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Diseño Web</li>
-      <li>Desarrollo de Aplicaciones</li>
-      <li>Marketing Digital</li>
-    </ul>
+  <section id="nosotros">
+    <h2>Sobre nosotros</h2>
+    <p>Somos una tienda dedicada a ofrecer productos ecológicos y sustentables. Trabajamos con materiales reciclados y promovemos un estilo de vida responsable con el planeta.</p>
   </section>
 
-  <section id="contacto" class="seccion">
+  <section id="contacto">
     <h2>Contacto</h2>
     <form>
-      <input type="text" placeholder="Tu nombre" required />
-      <input type="email" placeholder="Tu correo" required />
-      <textarea placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
 
-  <footer>
-    <p>&copy; 2025 MiWeb. Todos los derechos reservados.</p>
-  </footer>
-</body>
-</html>
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+
+      <button type="submit">Env
